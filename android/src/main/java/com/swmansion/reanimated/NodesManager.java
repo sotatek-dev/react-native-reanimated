@@ -168,7 +168,7 @@ public class NodesManager implements EventDispatcherListener {
       final Queue<NativeUpdateOperation> copiedOperationsQueue = mOperationsInBatch;
       mOperationsInBatch = new LinkedList<>();
       mContext.runOnNativeModulesQueueThread(
-              new GuardedRunnable(mContext.getExceptionHandler()) {
+              new GuardedRunnable(mContext) {
                 @Override
                 public void runGuarded() {
                   boolean shouldDispatchUpdates = UIManagerReanimatedHelper.isOperationQueueEmpty(mUIImplementation);

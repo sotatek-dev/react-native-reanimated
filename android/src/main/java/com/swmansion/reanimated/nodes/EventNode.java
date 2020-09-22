@@ -60,7 +60,7 @@ public class EventNode extends Node implements RCTEventEmitter {
   @Override
   public void receiveEvent(int targetTag, String eventName, @Nullable WritableMap event) {
     if (event == null) {
-      throw new IllegalArgumentException("Animated events must have event data.");
+      return;
     }
 
     for (int i = 0; i < mMapping.size(); i++) {
